@@ -3,6 +3,10 @@
  * ------ Filters
  */
 
+input {
+	margin-right: 10px;
+}
+
 .container .filters {
 	height: 70px;
 	background-color: #FFFFFF;
