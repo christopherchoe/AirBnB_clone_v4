@@ -1,17 +1,15 @@
 let amenities = {};
-console.log('hi susan before our dom load');
 $(() => {
-  console.log('hi susan');
-  $('INPUT').each(function (index) {
-    if index.is(':checked')) {
-      console.log('checked');
-      amenities[index.attr('data-name')] = index.attr('data-id');
+  $('input').on('click', function () {
+    if ($(this).is(':checked')) {
+      amenities[$(this).attr('data-id')] = $(this).attr('data-name');
     } else {
-      console.log('not checked');
-      if (amenities[index.attr('data-name')]) {
-        delete amenities[index.attr('data-name')]
-      }
+      delete amenities[$(this).attr('data-id')];
     }
-  }
-  console.log(amenities);
+    $('DIV.amenities H4').text(() => {
+      let arr = Object.values(amenities);
+      let str = arr.join(', ');
+      return str;
+    });
+  });
 });
