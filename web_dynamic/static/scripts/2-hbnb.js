@@ -16,9 +16,9 @@ $(() => {
   });
 
   $.ajax({
-    url: 'http://0.0.0.0:5001/api/v1/status/',
+    url: 'http://55.55.55.5:5001/api/v1/status/',
     success: function (result, statusCode) {
-      if (statusCode == 200) {
+      if (result.status === 'OK') {
         $('DIV#api_status').addClass('available');
       } else {
         if ($('DIV#api_status').hasClass('available')) {
