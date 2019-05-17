@@ -60,6 +60,12 @@
 	margin: 7px 0 3px 40px;
 }
 
+.container .filters .amenities h4 {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
 /**
  * ------ POPOVER
  */
