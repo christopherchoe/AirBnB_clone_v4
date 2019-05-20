@@ -1,5 +1,8 @@
 let amenities = {};
 $(() => {
+  ipAddress = window.location.hostname;
+  uri = 'http://' + ipAddress + ':5001/api/v1/';
+
   $('input').on('click', function () {
     if ($(this).is(':checked')) {
       amenities[$(this).attr('data-id')] = $(this).attr('data-name');
@@ -15,7 +18,7 @@ $(() => {
   });
 
   $.ajax({
-    url: 'http://192.168.33.10:5001/api/v1/status/',
+    url: uri + 'status/',
     success: function (result, statusCode) {
       if (result.status === 'OK') {
         $('DIV#api_status').addClass('available');
@@ -29,7 +32,7 @@ $(() => {
 
   $.ajax({
     type: 'POST',
-    url: 'http://192.168.33.10:5001/api/v1/places_search',
+    url: uri + 'places_search',
     contentType: 'application/json',
     data: JSON.stringify({}),
     success: function (result, statusCode) {
