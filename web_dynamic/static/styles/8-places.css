@@ -98,3 +98,7 @@
 		line-height: 42px;
 	}
 }
+
+span {
+    float: right;
+}
