@@ -3,6 +3,8 @@ let states = {};
 let cities = {};
 
 $(() => {
+  let ipAddress = window.location.hostname;
+  let uri = 'http://' + ipAddress + ':5001/api/v1/'
   $('input.amenities').on('click', function () {
     if ($(this).is(':checked')) {
       amenities[$(this).attr('data-id')] = $(this).attr('data-name');
@@ -55,7 +57,7 @@ $(() => {
     let dict = {'amenities': amen_list, 'states': states_list, 'cities': cities_list};
     $.ajax({
       type: 'POST',
-      url: 'http://192.168.33.10:5001/api/v1/places_search',
+      url: uri + 'places_search',
       contentType: 'application/json',
       data: JSON.stringify(dict),
       success: function (result, statusCode) {
@@ -65,7 +67,7 @@ $(() => {
   });
 
   $.ajax({
-    url: 'http://192.168.33.10:5001/api/v1/status/',
+    url: uri + 'status',
     success: function (result, statusCode) {
       if (result.status === 'OK') {
         $('DIV#api_status').addClass('available');
@@ -79,7 +81,7 @@ $(() => {
 
   $.ajax({
     type: 'POST',
-    url: 'http://192.168.33.10:5001/api/v1/places_search',
+    url: uri + 'places_search',
     contentType: 'application/json',
     data: JSON.stringify({}),
     success: function (result, statusCode) {
