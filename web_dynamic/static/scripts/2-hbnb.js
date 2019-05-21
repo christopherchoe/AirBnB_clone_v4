@@ -1,5 +1,7 @@
 let amenities = {};
 $(() => {
+  ipAddress = window.location.hostname;
+  uri = 'http://' + ipAddress + ':5001/api/v1/';
 
   $('input').on('click', function () {
     if ($(this).is(':checked')) {
@@ -16,7 +18,7 @@ $(() => {
   });
 
   $.ajax({
-    url: 'http://55.55.55.5:5001/api/v1/status/',
+    url: uri + 'status/',
     success: function (result, statusCode) {
       if (result.status === 'OK') {
         $('DIV#api_status').addClass('available');
