@@ -1,5 +1,7 @@
 <img src="https://github.com/jarehec/AirBnB_clone_v3/blob/master/dev/HBTN-hbnb-Final.png" width="160" height=auto />
 
+This is part 4 of an iteratively accomplished project recreating an Airbnb search filtering page, to see the previous iteration. To see the previous iteration visit [AirBnB Clone v3](https://github.com/christopherchoe/AirBnB_clone_v3)
+
 # AirBnB Clone: Phase # 3
 
 : API with Swagger
